@@ -1,0 +1,16 @@
+version: "3"
+services:
+  db:
+      image: mysql:${TAG}
+      volumes:
+          - ${DATA_PATH}:/var/lib/mysql
+      ports:
+          - 3306:${PORT}
+      restart: always
+      environment:
+          MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+          MYSQL_DATABASE: ${MYSQL_DATABASE}
+          MYSQL_USER: ${MYSQL_USER}
+          MYSQL_PASSWORD: ${MYSQL_PASSWORD}
+volumes:
+  data:
